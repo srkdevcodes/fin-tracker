@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Financial Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+    <h1>💰 Personal Financial Tracker</h1>
+
+    <nav>
+        <a href="/templates/daily.html">Daily Tracker</a>
+        <a href="#monthly">Monthly</a>
+        <a href="#yearly">Yearly</a>
+
+
+    </nav>
+
+    <div class="container">
+        <div class="section income-section">
+            <h2 class="income-heading">💸 Enter Your Monthly Income</h2>
+            <div class="custom-input-wrapper">
+                <span>₹</span>
+                <input type="number" id="income" class="custom-input" placeholder="e.g. 40000" />
+            </div>
+            <button onclick="calculateBudget()" class="calculate-btn">🚀 Calculate Budget</button>
+        </div>
+
+        <div id="animatedIncome" class="animated-income-text"></div>
+
+
+        <div class="results section" id="budgetResults"></div>
+
+        <div class="section">
+            <h3 style="text-align:center; margin-top: 40px;">📦 Add Expenses (50% Needs)</h3>
+            <div id="expensesList">
+                <div class="expense-group">
+                    <input type="text" class="expense-name" placeholder="Expense name (e.g. Rent)">
+                    <input type="number" class="expense-amount" placeholder="Amount (e.g. 10000)">
+                </div>
+            </div>
+            <button onclick="addExpenseField()">+ Add More Expense</button>
+            <button onclick="checkExpenses()">Check Expenses</button>
+            <div class="section" id="expenseStatus"></div>
+        </div>
+
+        <div class="chart">
+            <canvas id="budgetChart"></canvas>
+        </div>
+
+        <div class="history section">
+            <h3>📅 Monthly Records</h3>
+            <div id="historyList"></div>
+        </div>
+        <button id="clear-monthly">🧹 Clear Monthly Records</button>
+
+
+    </div>
+
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

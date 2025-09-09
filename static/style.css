@@ -1,0 +1,279 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Roboto', sans-serif;
+ }
+
+ body {
+     background: linear-gradient(135deg, #e0f7fa, #fff);
+     padding: 20px;
+     color: #333;
+ }
+
+
+ .typing-title {
+     width: fit-content;
+     border-right: 2px solid;
+     white-space: nowrap;
+     overflow: hidden;
+     animation: typing 3s steps(30), blink 0.5s step-end infinite alternate;
+     font-size: 2.5rem;
+     font-weight: bold;
+     background: linear-gradient(to right, #ee0979, #ff6a00);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+
+ @keyframes typing {
+     from {
+         width: 0
+     }
+
+     to {
+         width: 100%
+     }
+ }
+
+ @keyframes blink {
+     50% {
+         border-color: transparent
+     }
+ }
+
+ h1 {
+     text-align: center;
+     margin-bottom: 30px;
+     font-size: 2.5em;
+     color: #2e7d32;
+     animation: fadeInDown 1s ease-in-out;
+ }
+
+ nav {
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+     margin-bottom: 30px;
+     background: #00796b;
+     padding: 15px 0;
+     border-radius: 12px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+ }
+
+ nav a {
+     color: white;
+     text-decoration: none;
+     font-weight: bold;
+     padding: 10px 20px;
+     border-radius: 8px;
+     transition: background 0.3s, transform 0.2s;
+ }
+
+ nav a:hover {
+     background: #004d40;
+     transform: scale(1.05);
+ }
+
+ .container {
+     max-width: 900px;
+     margin: auto;
+     background: #fff;
+     padding: 30px;
+     border-radius: 12px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .section {
+     margin-bottom: 25px;
+ }
+
+ label,
+ input,
+ button,
+ select {
+     margin: 10px 0;
+     width: 100%;
+ }
+
+ input,
+ select {
+     padding: 10px;
+     border-radius: 8px;
+     border: 1px solid #ccc;
+ }
+
+ button {
+     background: #009688;
+     color: white;
+     padding: 12px;
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: background 0.3s;
+ }
+
+ button:hover {
+     background: #01ba30;
+ }
+
+ #expenseStatus span {
+     font-size: 1.1em;
+     font-weight: 600;
+     color: #00695c;
+     display: inline-block;
+     margin-top: 10px;
+ }
+
+ .results,
+ .history,
+ .chart {
+     margin-top: 20px;
+ }
+
+ .expense-item {
+     display: flex;
+     justify-content: space-between;
+     margin: 5px 0;
+ }
+
+ .expense-group {
+     display: flex;
+     gap: 10px;
+     flex-wrap: wrap;
+ }
+
+ .expense-group input[type="text"],
+ .expense-group input[type="number"] {
+     flex: 1;
+ }
+
+ #budgetResults {
+     text-align: center;
+     font-size: 1.5em;
+     background-color: #b2dfdb;
+     border: 2px solid #00796b;
+     border-radius: 10px;
+     padding: 20px;
+     font-weight: bold;
+     color: #004d40;
+     margin: auto;
+     max-width: 500px;
+     line-height: 2;
+     animation: zoomIn 1s ease-in-out;
+ }
+
+ .chart canvas {
+     max-width: 300px;
+     max-height: 300px;
+     margin: auto;
+     display: block;
+ }
+
+ @keyframes fadeInDown {
+     from {
+         opacity: 0;
+         transform: translateY(-20px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ @keyframes zoomIn {
+     0% {
+         transform: scale(0.8);
+         opacity: 0;
+     }
+
+     100% {
+         transform: scale(1);
+         opacity: 1;
+     }
+ }
+
+ .income-section {
+     text-align: center;
+     margin: 50px 0;
+ }
+
+ .income-heading {
+     font-size: 1.8em;
+     color: #4CAF50;
+     margin-bottom: 20px;
+ }
+
+ .custom-input-wrapper {
+     display: inline-flex;
+     align-items: center;
+     font-size: 1.5em;
+     padding: 10px 20px;
+     border: 2px solid #4CAF50;
+     border-radius: 12px;
+     background: #fff;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     margin-bottom: 20px;
+ }
+
+ .custom-input-wrapper span {
+     color: #4CAF50;
+     font-weight: bold;
+     margin-right: 10px;
+ }
+
+ .custom-input {
+     border: none;
+     outline: none;
+     font-size: 1em;
+     width: 150px;
+ }
+
+ .calculate-btn {
+     font-size: 1.1em;
+     background: linear-gradient(to right, #009688, #006157);
+     padding: 12px 24px;
+     border-radius: 10px;
+     margin-top: 10px;
+     color: white;
+     transition: transform 0.2s ease-in-out;
+ }
+
+ .calculate-btn:hover {
+     transform: scale(1.05);
+     background: linear-gradient(to right, #1eff26, #019a3c);
+ }
+
+ /* Animated Income Output */
+ #animatedIncome {
+     text-align: center;
+     margin-top: 20px;
+     font-size: 2rem;
+     font-weight: bold;
+     opacity: 0;
+     transition: all 0.6s ease;
+ }
+
+
+ .animated-income-text {
+     margin-top: 30px;
+     font-size: 2em;
+     font-weight: bold;
+     background: linear-gradient(to right, #f12711, #f5af19);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     animation: fadeInScale 0.8s ease-out forwards;
+     opacity: 0;
+ }
+
+ @keyframes fadeInScale {
+     0% {
+         opacity: 0;
+         transform: scale(0.6);
+     }
+
+     100% {
+         opacity: 1;
+         transform: scale(1);
+     }
+ }
