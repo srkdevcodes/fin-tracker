@@ -25,16 +25,16 @@ def daily():
 @app.route('/add_expense', methods=['POST'])
 def add_expense():  
     data = request.json
-    date = data.get('date')
-    category = data.get('category')
-    amount = data.get('amount')
-    description = data.get('description', '')
+    income = data.get('income')
+    needs = data.get('needs')
+    wants = data.get('wants', '')
+    savings = data.get('savings', '')
 
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute(
-        "INSERT INTO expenses (date, category, amount, description) VALUES (%s, %s, %s, %s)",
-        (date, category, amount, description)
+        "INSERT INTO expenses (income, needs, wants, savings) VALUES (%s, %s, %s, %s)",
+        (income, needs, wants, savings)
     )
     conn.commit()
     cursor.close()

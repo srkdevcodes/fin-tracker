@@ -1,6 +1,6 @@
 let budgetData = {};
 
-function calculateBudget() {
+async function calculateBudget() {
     const income = parseFloat(document.getElementById('income').value);
     if (!income || income <= 0) {
         alert("Please enter a valid income.");
@@ -22,6 +22,12 @@ function calculateBudget() {
         20% Enjoyment: ₹${wants.toFixed(2)}<br>
         30% Savings: ₹${savings.toFixed(2)}
     `;
+
+    await fetch("/add_expense", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ income, needs, wants, savings})
+      });
 
     renderChart(needs, wants, savings);
     saveToHistory(income, needs, wants, savings);
@@ -108,3 +114,5 @@ document.getElementById("clear-monthly").addEventListener("click", function () {
     list.innerHTML = ""; // Clear displayed list
     alert("Monthly records cleared successfully!");
 });
+
+
